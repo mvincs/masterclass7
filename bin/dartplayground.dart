@@ -1,14 +1,13 @@
-void main(List<String> arguments) {
-  fibonacci(1, 1);
+import './Cartao/cartao.dart';
+
+void main() {
+  Cartao mastercad = Cartao('5419825003461210');
+  Cartao visa = Cartao('4916641859369080');
+
+  print(validaCartao(mastercad));
+  print(validaCartao(visa));
 }
 
-double fCalculaImc({required double altura, required double peso}) {
-  return peso / (altura * altura);
-}
-
-void fibonacci(antecessor1, antecessor2) {
-  int proximo = antecessor1 + antecessor2;
-  print(' termo1: $antecessor1 termo2: $antecessor2 ');
-  print(' resultado = $proximo');
-  fibonacci(antecessor2, proximo);
+bool validaCartao(Cartao card) {
+  return card.valido();
 }
